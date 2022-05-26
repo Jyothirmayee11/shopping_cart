@@ -1,0 +1,19 @@
+.header {
+    height:20%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 120px;
+    border-bottom: 1px solid lightgray;
+    background: white;
+    top: 0;
+    position: sticky;
+}
+
+.logo{
+    height: 60px;
+}
+
+.logo-container{
+    // padding: 10px 0px 0px 100px;
+}
+  
