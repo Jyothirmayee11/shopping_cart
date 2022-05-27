@@ -14,6 +14,10 @@ function Products() {
     fetch('http://localhost:5000/categories').then((res) => res.json()).then((result) => {
     updateCategories(result);
     })
+    fetch('http://localhost:5000/products').then((res) => res.json()).then((products) => {
+      const productsList = products.filter((product) => product.category === products[0].category)
+      updateProductList(productsList);
+    })
     }
   },[categories, categories.length, updateCategories]);
 
@@ -21,7 +25,6 @@ function Products() {
     fetch('http://localhost:5000/products').then((res) => res.json()).then((products) => {
       const productsList = products.filter((product) => product.category === category.id)
       updateProductList(productsList);
-      console.log(productsList);
     })
   }
   

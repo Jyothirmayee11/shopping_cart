@@ -1,11 +1,37 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: 220px;
-    height: 300px;
+    height: 350px;
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
   }
   
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.description {
+    background: lightgrey;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.purchase {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    border-radius: 2px;
+}
+
+img {
+    height: 150px;
 }
