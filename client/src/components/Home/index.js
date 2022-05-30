@@ -23,7 +23,6 @@ const Home = () => {
         <Carousel>
             {offers.map((offer) => 
                     <div>
-                        {console.log(offer)}
                     <img src={offer.bannerImageUrl} alt={offer.bannerImageAlt} />
                     <p >{offer.bannerImageAlt} </p>
                     </div>
@@ -35,7 +34,6 @@ const Home = () => {
             {categories.map((category, index) => {
                 return(
                     <div key={index} className="category-card">
-                                    {console.log("product", categories, category)}
                         <img src={category.imageUrl} alt={category.name} />
                         <div className="name_des">
                             <h3>{category.name}</h3>

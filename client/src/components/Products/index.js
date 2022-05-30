@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import Card from '../Card';
+import Cart from './../Cart';
 
 import './products.css';
 
-function Products() {
+function Products(props) {
   const [ categories, updateCategories ] = useState([]);
   // const [ currentCategory, updateCurrentCategory ] = useState({});
   const [ productList, updateProductList] = useState([]);
@@ -44,7 +45,9 @@ function Products() {
           )
         })}
       </div>
-
+      {props.openCart && 
+        <Cart/>
+      }
     </div>
   );
 }

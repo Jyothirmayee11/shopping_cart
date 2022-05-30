@@ -1,16 +1,13 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-// import Signup from '../SignUp';
-// import Products from '../Products';
-// import Login from '../Login';
-// import Cart from '../Cart';
+import { Link, Outlet } from 'react-router-dom';
 
 import cartLogo from '../../assets/cart.svg';
 
 import './navigation.css';
 
-export default function Navigation() {
+function Navigation(props) {
     return(
         <><div className='navigation'>
             <div className='home-products'>
@@ -22,11 +19,28 @@ export default function Navigation() {
                     <Link to="/signin"> SignIn </Link>
                     <Link to="/register"> Register </Link>
                 </div>
+
+                <Link to="/cart">
                 <div className='cart'>
-                <img className='cart-logo' src={cartLogo} alt="cart" />
-                    <div className='cart-items'> 0 items </div>
-                </div>
+                    <img className='cart-logo' src={cartLogo} alt="cart" />
+                    <div className='cart-items'> {props.cartItems.length} items </div>
+                    </div>
+                    </Link>
+
             </div>
         </div><Outlet /></>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+      cartItems: state.cartItems,
+    }
+  }
+  
+  const mapDispatchToProps = (state, dispatch) => {
+    return{
+    }
+  }
+  
+  export default connect(mapStateToProps,mapDispatchToProps)(Navigation);

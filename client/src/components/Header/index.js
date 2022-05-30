@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss';
 import Navigation from '../Navigation';
-import Logo from './../../assets/logo.png';
+import Logo from './../../assets/logo_2x.png';
 
 
 export default function Header() {
