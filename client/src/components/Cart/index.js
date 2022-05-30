@@ -28,21 +28,22 @@ function Cart(props) {
           </div>
         </div>
         <div className='modal-body'>
+          <div className='cards'>
           {props.cartItems.length ? 
             props.cartItems.map((product, index) => <CartCard product={product} key={index}/>):
             <div className='modal-footer'>
             <h5> No items in your cart </h5>
             <div> Your favourite items are just a click away</div>
             </div>
-
           }
-        </div>
-        <div className='modal-footer'>
+          </div>
+          <div className='modal-footer'>
           <div className='tagline'> Promo code can be applied anywhere </div>
           <div className='button'> 
             <div> Proceed to checkout </div>
             <div> Rs {props.totalCartPrice} </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

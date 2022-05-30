@@ -39,7 +39,7 @@
 
   .modal-header {
       background-color: #000;
-      height: 40px;
+      height: 8%;
   }
   .header-content{
       color: white;
@@ -51,7 +51,11 @@
   }
 
   .modal-body {
+    height: 92%;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .modal-footer{
@@ -73,4 +77,8 @@
     background-color: #dc387c;
     padding: 10px;
     margin: 10px;
+  }
+
+  .cards {
+    overflow: auto;
   }
