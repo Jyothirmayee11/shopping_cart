@@ -1,4 +1,4 @@
-.cart_card{
+.cart_card {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -14,7 +14,7 @@
     border-radius: 5px;
 }
 
-.image{
+.image {
     height: 70px;
 }
 

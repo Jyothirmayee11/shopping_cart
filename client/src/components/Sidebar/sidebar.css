@@ -1,0 +1,16 @@
+.sidebar{
+    width: 20%;
+    height: 500px;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 75px;
+}
+
+.link {
+    padding:10px;
+    border: 0;
+    border-bottom: solid ;
+    border-color: silver ;
+}

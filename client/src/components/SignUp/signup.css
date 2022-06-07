@@ -1,4 +1,4 @@
-.signup{
+.signup {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,7 +9,7 @@
     padding-left: 5%;
 }
 
-label{
+label {
     position: relative;
     top: -20px;
     color:darkgray;
@@ -41,7 +41,7 @@ input:not(:placeholder-shown) + label {
     transition: transform 200ms;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
