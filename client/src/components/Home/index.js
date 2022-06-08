@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-elastic-carousel";
 import { useNavigate } from "react-router-dom";
 
+import { fetchApi } from "../../utils/fetchApi";
+import {  URL } from "../../constants/api"; 
+
 import "./home.css";
 
 const Home = () => {
@@ -9,19 +12,21 @@ const Home = () => {
   const [offers, updateOffers] = useState([]);
   const navigate = useNavigate();
 
+  const fetchCategories = async () => {
+    const response  = await fetchApi(URL + '/categories')
+    updateCategories(response);
+  }
+  
+  const fetchOffers = async () => {
+    const response  = await fetchApi(URL + '/banners')
+    updateOffers(response);
+  }
+
   useEffect(() => {
     if (categories.length === 0) {
-      fetch("http://localhost:5000/categories")
-        .then((res) => res.json())
-        .then((result) => {
-          updateCategories(result);
-        });
+      fetchCategories();
     }
-    fetch("http://localhost:5000/banners")
-      .then((res) => res.json())
-      .then((result) => {
-        updateOffers(result);
-      });
+    fetchOffers();
   }, [categories, categories.length, updateCategories]);
   return (
     <>

@@ -8,6 +8,8 @@ import Login from "./components/Login";
 
 import { useAuth } from "./hooks/useAuth";
 import ProductsContainer from "./components/ProductsContainer";
+import { fetchApi } from "./utils/fetchApi";
+import { URL } from './constants/api'; 
 
 const PrivateRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -24,12 +26,14 @@ const RestrictedRoute = ({ children }) => {
 export const MainRoutes = () => {
   const [categories, updateCategories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((res) => res.json())
-      .then((res) => {
-        updateCategories(res);
-      });
+    fetchCategories();
   }, [updateCategories]);
+
+  const fetchCategories = async () => {
+    const response  = await fetchApi(URL + '/categories')
+    console.log("response", response);
+    updateCategories(response);
+  }
 
   return (
     <Routes>

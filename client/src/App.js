@@ -7,18 +7,22 @@ import { InnerLayout } from "./components/InnerLayout";
 import Footer from "./components/Footer";
 
 import { store } from "./redux/store";
+import { fetchApi } from "./utils/fetchApi";
+import { URL } from './constants/api'; 
 import "./App.scss";
 
 function App() {
   const [categories, updateCategories] = useState([]);
 
+  const fetchCategories = async () => {
+    const response  = await fetchApi(URL + '/categories')
+    console.log("response", response);
+    updateCategories(response);
+  }
+
   useEffect(() => {
     if (categories.length === 0) {
-      fetch("http://localhost:5000/categories")
-        .then((res) => res.json())
-        .then((result) => {
-          updateCategories(result);
-        });
+      fetchCategories();
     }
   }, [categories, categories.length, updateCategories]);
 
