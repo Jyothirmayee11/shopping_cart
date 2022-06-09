@@ -3,6 +3,13 @@
     flex-direction: row;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .products-page {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
 .products {
     padding: 20px;
     width: 80%;

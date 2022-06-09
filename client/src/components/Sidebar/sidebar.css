@@ -14,3 +14,17 @@
     border-bottom: solid ;
     border-color: silver ;
 }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+    .sidebar {
+      width: 30%;
+      height: auto;
+      position: inherit;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+}

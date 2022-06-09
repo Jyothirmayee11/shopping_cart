@@ -1,0 +1,13 @@
+.mobile-sidebar{
+    display: block;
+    padding: 5px;
+    height: 20px;
+    background: #dc387c;
+}
+
+select {
+    width: 98%;
+    background:#dc387c;
+    border: none;
+    color: white;
+}

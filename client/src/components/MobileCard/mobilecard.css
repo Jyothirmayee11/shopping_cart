@@ -1,0 +1,34 @@
+.name_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.img_des {
+    display: flex;
+    flex-direction: row;
+}
+
+.des_price {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile_card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    width: 315px;
+    height: 270px;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.button {
+    padding: 10px;
+    color: white;
+    border: none;
+    background-color: #dc387c;
+    width: 100%;
+}

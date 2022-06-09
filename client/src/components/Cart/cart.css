@@ -23,6 +23,13 @@
     justify-content: space-between;
   }
 
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .modal-content {
+      width: 100%;
+      height: 90%;
+    }
+}
+
   .close {
     color: #aaaaaa;
     float: right;
@@ -86,3 +93,4 @@
   .cart-empty {
     
   }
+

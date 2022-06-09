@@ -26,6 +26,7 @@ const RestrictedRoute = ({ children }) => {
 export const MainRoutes = () => {
   const [categories, updateCategories] = useState([]);
   useEffect(() => {
+    if(categories.length === 0)
     fetchCategories();
   }, [updateCategories]);
 
