@@ -43,6 +43,8 @@ const Home = () => {
       <div className="categories">
         {categories.map((category, index) => {
           return (
+            <>
+            { category.order !== -1 &&
             <div key={index} className="category-card">
               <img src={category.imageUrl} alt={category.name} />
               <div className="name_des">
@@ -53,6 +55,8 @@ const Home = () => {
                 </button>
               </div>
             </div>
+          }
+        </>
           );
         })}
       </div>

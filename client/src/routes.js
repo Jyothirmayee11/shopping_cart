@@ -10,6 +10,7 @@ import { useAuth } from "./hooks/useAuth";
 import ProductsContainer from "./components/ProductsContainer";
 import { fetchApi } from "./utils/fetchApi";
 import { URL } from './constants/api'; 
+import PageNotFound from "./components/NotFound";
 
 const PrivateRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -32,7 +33,6 @@ export const MainRoutes = () => {
 
   const fetchCategories = async () => {
     const response  = await fetchApi(URL + '/categories')
-    console.log("response", response);
     updateCategories(response);
   }
 
@@ -73,6 +73,7 @@ export const MainRoutes = () => {
           )}
           {categories.map((category, key) => (
             <Route
+              key={key}
               path={`${category.key}`}
               element={<ProductsContainer category={category} />}
               openCart={false}
@@ -81,7 +82,7 @@ export const MainRoutes = () => {
         </>
       </Route>
 
-      {/* <Route path="/cart" element={<Products openCart={true} allCategories={categories}/>}></Route> */}
+      <Route path="*" element={<PageNotFound />}> </Route>
     </Routes>
   );
 };

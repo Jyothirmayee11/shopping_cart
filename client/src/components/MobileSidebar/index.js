@@ -6,7 +6,6 @@ const MobileSidebar = (props) => {
     const navigate = useNavigate();
 
     const changeCategory = (key) => {
-        console.log("e", key);
         navigate(`/products/${key}`) ;
     }
 
@@ -15,7 +14,8 @@ const MobileSidebar = (props) => {
         <div className="mobile-sidebar">
 
             <select className="form-control" onChange={(e) => changeCategory(e.target.value) } id="">
-                 { props.categories && props.categories.map((category, index) => <option value={category.key} key={category.key}>{category.name}</option> )}
+                 { props.categories && props.categories.map((category) => { return (
+                 <>{ category.order !== -1 && <option value={category.key} key={category.key}>{category.name}</option> }</>)})}
             </select>
 
         </div>

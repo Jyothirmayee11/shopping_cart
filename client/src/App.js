@@ -16,7 +16,6 @@ function App() {
 
   const fetchCategories = async () => {
     const response  = await fetchApi(URL + '/categories')
-    console.log("response", response);
     updateCategories(response);
   }
 

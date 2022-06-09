@@ -9,6 +9,8 @@ function Sidebar(props) {
         {props.categories &&
           props.categories.map((category, key) => {
             return (
+              <>
+              { category.order !== -1 &&
               <NavLink
                 className="link"
                 key={key}
@@ -17,7 +19,9 @@ function Sidebar(props) {
                 {" "}
                 {category.name}{" "}
               </NavLink>
-            );
+              }
+              </>
+              );
           })}
       </div>
     </>
